@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма банковской карты</title>
+</head>
+<body>
+    <form id="cardForm">
+        <label for="cardNumber">Номер карты:</label>
+        <input type="text" id="cardNumber" required><br>
+        <label for="cardHolder">Имя держателя:</label>
+        <input type="text" id="cardHolder" required><br>
+        <label for="expiryDate">Срок действия:</label>
+        <input type="month" id="expiryDate" required><br>
+        <button type="submit">Отправить</button>
+    </form>
+
+    <script>
+        const cardForm = document.getElementById('cardForm');
+
+        cardForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const cardNumber = document.getElementById('cardNumber').value;
+            const cardHolder = document.getElementById('cardHolder').value;
+            const expiryDate = document.getElementById('expiryDate').value;
+
+            console.log(`Номер карты: ${cardNumber}, Держатель: ${cardHolder}, Срок действия: ${expiryDate}`);
+            alert('Информация о карте отправлена!');
+        });
+    </script>
+</body>
+</html>
